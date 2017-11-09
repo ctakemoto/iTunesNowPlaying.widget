@@ -1,6 +1,8 @@
 # iTunesNowPlaying.widget
 
-An [Übersicht](http://tracesof.net/uebersicht/) widget to display the currently playing song in iTunes on your Desktop. You will need to install Übersicht first before you can use this widget. Then download the [zip file](iTunesNowPlaying.widget.zip) of the widget and move the unzipped folder into the Widgets Folder.
+An [Übersicht](http://tracesof.net/uebersicht/) widget to display the currently playing song in iTunes on your Desktop. You will need to install Übersicht first before you can use this widget. 
+
+Once Übersicht is installed, download the [zip file](iTunesNowPlaying.widget.zip) of the widget and move the unzipped folder into the Widgets Folder which can be found by clicking on the Übersicht icon in the menu bar.
 
 *Screen shot - White Theme*
 ![Example Screenshot of widget](ScreenshotWhite.png)
