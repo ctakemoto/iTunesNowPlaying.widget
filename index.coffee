@@ -5,14 +5,14 @@ options =
   vPosition: 'center'			#verticle position of the bar, options: 'top', 'center', 'bottom'
   hPosition: 'center'			#horizontal position of the bar, options: 'left', 'center'
   theme: 'white'				#theme options: 'white', 'black'
-
-
-
-command: "osascript iTunesNowPlaying.widget/iTunesinfo.scpt"
-
-refreshFrequency: '2s'
+  vOffset: '70px'				#offset the position of the widget vertically from default options, positive numbers shift the widget up
+  hOffset: '70px'				#offset the position of the widget horizontally from default options, positive numbers shift the widget left
 
 options : options
+
+command: "osascript iTunesNowPlaying.widget/iTunesinfo.scpt #{options.theme}"
+
+refreshFrequency: '70s'
 
 render: (output) -> """
 	<div id="main">
@@ -34,7 +34,7 @@ update: (output, domEl) ->
 
 style: """
 	font-weight: 200
-	font-size: 25px
+	font-size: 22px
 	font-family: Helvetica Neue
 
 	if #{options.theme} == white
@@ -44,29 +44,29 @@ style: """
 	
 
 	if #{options.vPosition} == center
-		top: 50%
+		top: calc(50% - 50px - #{options.vOffset})
 	else if #{options.vPosition} == top
-		top: 20%
+		top: calc(5% - #{options.vOffset})
 	else
-		top: 95%
+		bottom: calc(5% - #{options.vOffset})
+
 
 	if #{options.hPosition} == center
-		left: 50%
+		left: calc(50% - 200px- #{options.hOffset})
 	else
-		left: 12%
-
+		left: calc(5% - #{options.hOffset})
 
 	#main
 		color: text-color
-		margin: calc((100%/2)*-1) 0px 0px calc((100%/2)*-1)
 
 	img
 		max-width: 100px
 		max-height: 100px
 		position: absolute
 		left: 0%
-		margin: 0px 0px 0px -140px
-
+		
+	#info
+		margin-left: 110px
 
 	#title
 		font-style: italic
