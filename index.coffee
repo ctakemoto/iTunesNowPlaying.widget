@@ -2,17 +2,19 @@
 
 options =
   widgetEnable: true			#true to enable the widget, false to disable
-  vPosition: 'center'			#verticle position of the bar, options: 'top', 'center', 'bottom'
-  hPosition: 'center'			#horizontal position of the bar, options: 'left', 'center'
   theme: 'white'				#theme options: 'white', 'black'
-  vOffset: '70px'				#offset the position of the widget vertically from default options, positive numbers shift the widget up
-  hOffset: '70px'				#offset the position of the widget horizontally from default options, positive numbers shift the widget left
+  vPosition: 'center'			#verticle position, options: 'top', 'center', 'bottom'
+  hPosition: 'center'			#horizontal position, options: 'left', 'center'
+  vOffset: '0px'				#offset the position of the widget vertically from default options, positive numbers shift the widget up
+  hOffset: '0px'				#offset the position of the widget horizontally from default options, positive numbers shift the widget left
+  fontSize: '23px'				#change the size of the font
+  artMaxSize: '100px'			#change the size of the album art
 
 options : options
 
 command: "osascript iTunesNowPlaying.widget/iTunesinfo.scpt #{options.theme}"
 
-refreshFrequency: '70s'
+refreshFrequency: '5s'
 
 render: (output) -> """
 	<div id="main">
@@ -34,7 +36,7 @@ update: (output, domEl) ->
 
 style: """
 	font-weight: 200
-	font-size: 22px
+	font-size: #{options.fontSize}
 	font-family: Helvetica Neue
 
 	if #{options.theme} == white
@@ -60,13 +62,13 @@ style: """
 		color: text-color
 
 	img
-		max-width: 100px
-		max-height: 100px
+		max-width: #{options.artMaxSize}
+		max-height: #{options.artMaxSize}
 		position: absolute
 		left: 0%
 		
 	#info
-		margin-left: 110px
+		margin-left: calc(#{options.artMaxSize} + 10px)
 
 	#title
 		font-style: italic
