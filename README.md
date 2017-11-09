@@ -18,7 +18,7 @@ Easily choose to display or hide the widget by changing the value. Set widgetEna
 Change the color of the text and placeholder album art. Currently, there are two themes available, white or black.
 
 *Screen shot - Black Theme*
-![Example Screenshot of widget](ScreenshotWhite.png)
+![Example Screenshot of widget](ScreenshotBlack.png)
 
 ### vPosition & hPosition
 
