@@ -5,8 +5,8 @@ options =
   theme: 'white'				#theme options: 'white', 'black'
   vPosition: 'center'			#verticle position, options: 'top', 'center', 'bottom'
   hPosition: 'center'			#horizontal position, options: 'left', 'center'
-  vOffset: '0px'				#offset the position of the widget vertically from default options, positive numbers shift the widget up
-  hOffset: '0px'				#offset the position of the widget horizontally from default options, positive numbers shift the widget left
+  vOffset: '65px'				#offset the position of the widget vertically from default options, positive numbers shift the widget up
+  hOffset: '100px'				#offset the position of the widget horizontally from default options, positive numbers shift the widget left
   fontSize: '23px'				#change the size of the font
   artMaxSize: '100px'			#change the size of the album art
 
@@ -38,11 +38,7 @@ style: """
 	font-weight: 200
 	font-size: #{options.fontSize}
 	font-family: Helvetica Neue
-
-	if #{options.theme} == white
-		text-color = #FFF
-	else
-		text-color = #000
+	text-color = #{options.theme}
 	
 
 	if #{options.vPosition} == center
