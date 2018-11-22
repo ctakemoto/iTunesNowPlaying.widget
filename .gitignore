@@ -3,3 +3,7 @@
 *.jpg
 
 cover.png
+iTunesNowPlaying.widget/index.coffee
+iTunesNowPlaying.widget/iTunesInfo.scpt
+iTunesNowPlaying.widget/placeholderblack.png
+iTunesNowPlaying.widget/placeholderwhite.png
